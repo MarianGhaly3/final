@@ -15,9 +15,18 @@ class FrontPage extends Controller
      */
     public function index()
     {
+        // $beverages = Beverage::get();
         $categories = Category::get();
-        $beverages = Beverage::get();
-        return view('index', compact('beverages', 'categories'));     }
+        $beverages = Beverage::get()->groupBy('category_id');   
+        return view('index', compact('categories', 'beverages'));     
+    }
+
+    // public function getBeverage()
+    // {
+    //     // $beverage = Beverage::findOrFail('category_id');
+    //     $beverages = Beverage::get()->groupBy('category_id');   
+    //     return view('index', compact('beverages'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -32,16 +41,7 @@ class FrontPage extends Controller
      */
     public function store(Request $request)
     {
-
-        // $data = $request->validate([
-
-        //  'name' => 'required|max:100|min:4',
-        //  'email' => 'required|email',
-        //  'message' => 'required|max:250|min:20',
-        // ]);
-
-        // Message::create($data);
-        // return redirect ('index'); 
+        //
     }
 
     /**

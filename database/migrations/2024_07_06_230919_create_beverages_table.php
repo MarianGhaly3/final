@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('price', 3);
             $table->boolean('published');
             $table->boolean('special');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->foreignId('category_id')->constrained('categories')->nullable();
         });
     }

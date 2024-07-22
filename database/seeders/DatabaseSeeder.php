@@ -3,8 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Beverage;
+use App\Models\Message;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+// \Schema::disableForeignKeyConstraints();
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        User::factory(5)->create();
+        Beverage::factory(8)->create();
+        Message::factory(5)->create();
     }
 }

@@ -48,7 +48,7 @@
 					<div class="x_content">
 						<br />
 						<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
-							action="{{ route('BeverageInserted') }} {{ route('updateBeverage', $beverage->id) }}" method="POST" enctype="multipart/form-data">
+							action=" {{ route('updateBeverage', $beverage->id) }}" method="POST" enctype="multipart/form-data">
 							@csrf
 							@method('put')
 
@@ -114,7 +114,7 @@
 										class="required">*</span>
 								</label>
 								<div class="col-md-6 col-sm-6 ">
-									<input type="file" id="image" required="required" class="form-control" name="image">
+									<input type="file" id="image" class="form-control" name="image">
 								</div>
 								<p style="color:red">
 									@error('price')

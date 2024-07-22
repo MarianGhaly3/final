@@ -86,8 +86,9 @@ class beveragesController extends Controller
     {
         $title = "Edit Beverage";
         $beverage = Beverage::findOrFail($id);
+        $categories = Category::get();
         $messages = Message::get();
-        return view('admin/editBeverage', compact('title', 'messages', 'beverage')); 
+        return view('admin/editBeverage', compact('title', 'messages', 'beverage', 'categories')); 
     }
 
     /**
@@ -126,5 +127,11 @@ class beveragesController extends Controller
         Beverage::where('id', $id)->delete();
         return redirect('admin/beverages');    
     }
+
+    // public function getBeverage()
+    // {
+    //     $beverages = Beverage::all()->groupBy('category_id');   
+    //     return view('index', compact('beverages'));
+    // }
     
 }
