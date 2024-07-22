@@ -27,7 +27,6 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                @foreach ($messages as $message)
 
                   <h2>Full Name: {{ $message->name }} </h2>
                   <br>
@@ -35,8 +34,6 @@
                    <br>
                   <h2>Message Content:</h2>
                   <p>{{ $message->message }}</p>
-                  <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In nisi facilis, excepturi ipsum recusandae quidem doloribus veniam quisquam at, dignissimos autem quos iste libero sint architecto voluptatem consectetur possimus nobis.</p> -->
-                @endforeach
 
                 </div>
               </div>

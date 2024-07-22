@@ -56,8 +56,10 @@ class messagesController extends Controller
     public function show(string $id)
     {
         $title = "Show Message";
+        $messages = Message::get();
         $message = Message::findOrFail($id);
-        return view('admin/showMessage', compact('beverage', 'title'));       }
+        return view('admin/showMessage', compact('messages', 'message', 'title'));       
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -78,8 +80,9 @@ class messagesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
-    }
+        $id = $request->id;
+        Message::where('id', $id)->delete();
+        return redirect('admin/messages');       }
 }
