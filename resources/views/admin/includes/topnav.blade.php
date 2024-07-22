@@ -10,6 +10,7 @@
 					<a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
 						data-toggle="dropdown" aria-expanded="false">
 						<img src="{{ asset('assets/admin/images/img.jpg') }}" alt="">
+						{{ Auth::user()->fullname }}
 					</a>
 
 					<div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
